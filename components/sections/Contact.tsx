@@ -23,7 +23,7 @@ export function Contact() {
         transition={{ duration: 0.5 }}
         className="max-w-xl text-balance text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl"
       >
-        Open to Frontend / React roles — let&apos;s talk.
+        Open to Frontend and Full-Stack roles — let&apos;s talk.
       </motion.h2>
 
       <p className="mt-4 flex items-center gap-2 text-ink-muted">

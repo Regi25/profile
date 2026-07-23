@@ -16,7 +16,7 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="text-balance text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl"
         >
-          A second career, chosen on purpose.
+          Frontend Developer.<br />React in production, full-stack on the side.
         </motion.h2>
 
         <motion.div
@@ -27,24 +27,20 @@ export function About() {
           className="space-y-5 text-[17px] leading-relaxed text-ink-muted"
         >
           <p>
-            Before writing a line of production code, I spent more than twelve years
-            coordinating transport logistics and later leading a department and
-            practicing law. Both jobs came down to the same thing: own a process
-            end to end, and be the person accountable when it breaks.
+            I&apos;m a Frontend Developer at Xtuning, working on a production B2C
+            e-commerce admin platform in React, TypeScript and Tailwind. Day to day
+            that means shipping new modules, maintaining existing features, and
+            integrating REST APIs in close collaboration with the backend team.
           </p>
           <p>
-            I moved into frontend development because I wanted to build the systems
-            directly instead of working around them. Today I&apos;m a Frontend
-            Developer at Xtuning, shipping UI for a live B2C e-commerce admin
-            platform in React, TypeScript and Tailwind. Outside of that, I build
-            full-stack and AI products on my own — Postgres, Drizzle, LLM
-            integration, all the way to the interface.
+            Outside of work I build full-stack and AI products end to end — Postgres,
+            Drizzle, LLM integration, all the way to the interface. Both Praetor and
+            Snaprime below are solo builds from schema to deployment.
           </p>
           <p>
-            The legal and logistics background isn&apos;t something I&apos;m moving
-            past. It&apos;s why I default to structured state, typed forms, and
-            asking what happens at the edge case — before it becomes a production
-            bug.
+            Before moving into software I spent over twelve years in law and later
+            transport logistics. That background shows up in how I think about
+            edge cases, typed data contracts, and owning a process end to end.
           </p>
         </motion.div>
       </div>

@@ -2,11 +2,9 @@ export const profile = {
   name: "Regina Iuldasheva",
   role: "Frontend Developer",
   location: "České Budějovice, Czech Republic",
-  // TODO: replace with a real inbox you check — don't ship a placeholder to production.
-  email: "regina@example.com",
+  email: "reginaiuldasheva@gmail.com",
   github: "https://github.com/Regi25",
   linkedin: "https://www.linkedin.com/in/regina-i-227920336/",
-  // TODO: drop your PDF resume at /public/resume.pdf — the button already points there.
   resumeHref: "/resume.pdf"
 };
 
@@ -22,39 +20,57 @@ export const experience = [
   {
     id: "xtuning",
     company: "Xtuning s.r.o.",
-    context: "AgroEcoPower — B2C e-commerce",
+    context: "AgroEcoPower — B2C e-commerce platform",
     role: "Frontend Developer",
     period: "09/2025 — Present",
-    location: "České Budějovice",
+    location: "Jihlava (hybrid)",
     summary:
-      "Build and maintain the admin platform that runs a live B2C e-commerce operation — the internal tool the business actually depends on, not a prototype.",
+      "Building and maintaining a production B2C e-commerce administration platform used by internal teams.",
     highlights: [
-      "Ship and maintain UI for an existing production codebase alongside backend and design",
-      "Type-safe forms with React Hook Form + Zod, wired to REST APIs",
-      "Role-based UI (RBAC) — different views and permissions per user role",
-      "React, TypeScript, Tailwind CSS in day-to-day work"
+      "Migrated critical UI components from a legacy stack to Next.js App Router, removing the dependency on outdated patterns and unblocking further development",
+      "Designed and implemented new RBAC roles based on business requirements",
+      "Built reusable components with forwardRef, Custom Hooks and Context API — reducing code duplication across the app",
+      "Integrated REST APIs in close collaboration with the backend team"
     ]
   },
   {
     id: "wefriiends",
     company: "WeFriiends",
-    context: "",
-    role: "Frontend Developer",
-    period: "",
-    location: "",
+    context: "Charitable social web application",
+    role: "Frontend Web Developer",
+    period: "10/2023 — 01/2026",
+    location: "Remote (freelance)",
     summary:
-      "TODO — add the real role, dates and 2–3 concrete contributions here. Keep the same format as the Xtuning entry above so the timeline stays consistent.",
-    highlights: []
+      "Contributed to a social platform built for a charitable organisation — working as part of a distributed team across the full frontend lifecycle.",
+    highlights: [
+      "Developed features in React and TypeScript, integrated REST APIs for real-time data sync",
+      "Collaborated with designers in Figma and participated in sprint planning",
+      "First hands-on experience with SQL and backend data flow — foundation for later full-stack work"
+    ]
+  },
+  {
+    id: "corax",
+    company: "Corax",
+    context: "",
+    role: "Transport Coordinator",
+    period: "08/2020 — 08/2025",
+    location: "České Budějovice",
+    summary:
+      "Managed logistics operations and cross-team coordination for large clients, working daily with TMS systems and tight process dependencies.",
+    highlights: [
+      "Streamlined internal administrative workflows and ensured regulatory compliance",
+      "Coordinated communication between drivers, dispatchers and departments to eliminate handoff delays"
+    ]
   },
   {
     id: "before-it",
-    company: "Logistics & Legal",
-    context: "12+ years, prior career",
-    role: "Transport logistics coordination → department lead / in-house lawyer",
-    period: "Pre-2024",
-    location: "",
+    company: "Administrative Authority, Russia",
+    context: "",
+    role: "Head of Department · Legal Counsel",
+    period: "09/2007 — 01/2019",
+    location: "Ufa, Russia",
     summary:
-      "Ran transport logistics coordination before moving into leading a department and handling legal work. Both roles meant owning process end-to-end and being accountable when something broke — the same instinct now shows up in how I structure state and edge cases in code.",
+      "Over twelve years in law and public administration — leading a team, handling legal documentation, and owning complex processes end to end. The habit of thinking in structured systems and edge cases carried directly into software development.",
     highlights: []
   }
 ];

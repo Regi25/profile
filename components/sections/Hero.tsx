@@ -36,9 +36,7 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.05 }}
             className="text-balance text-[2.6rem] font-medium leading-[1.08] tracking-tight text-ink sm:text-6xl"
           >
-            Interfaces built to hold up,
-            <br />
-            not just to ship.
+            Frontend Developer building production React apps and full-stack side projects.
           </motion.h1>
 
           <motion.p
@@ -114,8 +112,8 @@ export function Hero() {
               <dd className="text-right text-ink">České Budějovice, CZ</dd>
             </div>
             <div className={fact}>
-              <dt className="text-ink-muted">background</dt>
-              <dd className="text-right text-ink">12+ yrs logistics &amp; law</dd>
+              <dt className="text-ink-muted">stack</dt>
+              <dd className="text-right text-ink">React · Next.js · TypeScript</dd>
             </div>
             <div className={fact}>
               <dt className="text-ink-muted">building</dt>
