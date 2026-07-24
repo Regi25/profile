@@ -46,8 +46,9 @@ export function Hero() {
             className="mt-6 max-w-lg text-balance text-lg leading-relaxed text-ink-muted"
           >
             I&apos;m {profile.name}, a Frontend Developer working in React, Next.js and
-            TypeScript. Alongside my day job I design and ship full-stack and AI
-            products end to end — schema, backend, interface.
+            TypeScript. Alongside my day job, I build full-stack applications and
+            AI-powered products — from database schema and backend APIs to polished
+            user interfaces.
           </motion.p>
 
           <motion.div
@@ -105,7 +106,7 @@ export function Hero() {
           <dl className="font-mono text-[13px]">
             <div className={fact}>
               <dt className="text-ink-muted">role</dt>
-              <dd className="text-right text-ink">Frontend Dev @ Xtuning</dd>
+              <dd className="text-right text-ink">Frontend Developer</dd>
             </div>
             <div className={fact}>
               <dt className="text-ink-muted">based</dt>
@@ -117,14 +118,7 @@ export function Hero() {
             </div>
             <div className={fact}>
               <dt className="text-ink-muted">building</dt>
-              <dd className="text-right text-ink">full-stack + AI side projects</dd>
-            </div>
-            <div className={fact}>
-              <dt className="text-ink-muted">status</dt>
-              <dd className="flex items-center justify-end gap-1.5 text-right text-accent">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                open to new roles
-              </dd>
+              <dd className="text-right text-ink">Full-stack &amp; AI side projects</dd>
             </div>
           </dl>
         </motion.div>

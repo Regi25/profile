@@ -23,12 +23,12 @@ export function Contact() {
         transition={{ duration: 0.5 }}
         className="max-w-xl text-balance text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl"
       >
-        Open to Frontend and Full-Stack roles — let&apos;s talk.
+        Feel free to reach out — always happy to connect or discuss interesting work.
       </motion.h2>
 
       <p className="mt-4 flex items-center gap-2 text-ink-muted">
         <MapPin size={15} />
-        {profile.location}
+        Czech Republic
       </p>
 
       <div className="mt-10 flex flex-wrap gap-3">

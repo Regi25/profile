@@ -16,7 +16,7 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="text-balance text-3xl font-medium leading-tight tracking-tight text-ink md:text-4xl"
         >
-          Frontend Developer.<br />React in production, full-stack on the side.
+          Frontend Developer.<br />React in production. Full-stack by curiosity.
         </motion.h2>
 
         <motion.div
@@ -28,19 +28,21 @@ export function About() {
         >
           <p>
             I&apos;m a Frontend Developer at Xtuning, working on a production B2C
-            e-commerce admin platform in React, TypeScript and Tailwind. Day to day
-            that means shipping new modules, maintaining existing features, and
-            integrating REST APIs in close collaboration with the backend team.
+            e-commerce admin platform in React, TypeScript and Tailwind. My day-to-day
+            work focuses on delivering new product features, modernizing existing
+            modules, and building maintainable interfaces that integrate seamlessly
+            with backend services.
           </p>
           <p>
-            Outside of work I build full-stack and AI products end to end — Postgres,
-            Drizzle, LLM integration, all the way to the interface. Both Praetor and
-            Snaprime below are solo builds from schema to deployment.
+            Outside of work, I build full-stack products with AI integrations, covering
+            everything from database design and backend APIs to the frontend experience.
+            Both Praetor and Snaprime below are solo builds from schema to deployment.
           </p>
           <p>
-            Before moving into software I spent over twelve years in law and later
-            transport logistics. That background shows up in how I think about
-            edge cases, typed data contracts, and owning a process end to end.
+            Before moving into software I spent over twelve years in law and transport
+            logistics. That experience shaped the way I approach software today —
+            thinking systematically, anticipating edge cases, and taking ownership of
+            features from idea to delivery.
           </p>
         </motion.div>
       </div>

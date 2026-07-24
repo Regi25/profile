@@ -30,7 +30,7 @@ export const experience = [
       "Migrated critical UI components from a legacy stack to Next.js App Router, removing the dependency on outdated patterns and unblocking further development",
       "Designed and implemented new RBAC roles based on business requirements",
       "Built reusable components with forwardRef, Custom Hooks and Context API — reducing code duplication across the app",
-      "Integrated REST APIs in close collaboration with the backend team"
+      "Delivered production features by integrating frontend modules with REST APIs and backend services"
     ]
   },
   {
@@ -45,7 +45,7 @@ export const experience = [
     highlights: [
       "Developed features in React and TypeScript, integrated REST APIs for real-time data sync",
       "Collaborated with designers in Figma and participated in sprint planning",
-      "First hands-on experience with SQL and backend data flow — foundation for later full-stack work"
+      "Worked across the frontend lifecycle as part of a distributed team, gaining experience in product development workflows"
     ]
   },
   {
@@ -56,11 +56,8 @@ export const experience = [
     period: "08/2020 — 08/2025",
     location: "České Budějovice",
     summary:
-      "Managed logistics operations and cross-team coordination for large clients, working daily with TMS systems and tight process dependencies.",
-    highlights: [
-      "Streamlined internal administrative workflows and ensured regulatory compliance",
-      "Coordinated communication between drivers, dispatchers and departments to eliminate handoff delays"
-    ]
+      "Coordinated logistics operations for large clients, working daily with TMS systems and cross-functional teams.",
+    highlights: []
   },
   {
     id: "before-it",
@@ -81,15 +78,15 @@ export const projects = [
     name: "Praetor",
     tagline: "Subjects on File — Czech legal-tech prototype",
     description:
-      "A frontend prototype modelling how a Czech law firm attaches parties (clients, opposing parties, courts, attorneys) to a case file, with the ARES business registry wired in for one-click entity lookup.",
+      "A legal-tech prototype exploring how Czech law firms manage relationships between cases and legal entities — with ARES business registry integration for one-click entity lookup.",
     stack: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     highlights: [
-      "Type-safe state via a discriminated-union modal system — impossible to have two modals open at once at the type level",
+      "Prevented invalid UI states through type-safe discriminated-union modal system — impossible to have two modals open at once at the type level",
       "ARES registry integration: debounced search, stale-response guarding, import straight into the creation form",
-      "Accessibility work: focus restoration on modal close, trapped tab cycling, keyboard navigation",
-      "Deliberate architectural tradeoffs documented in the repo — no state library, no UI framework, by design"
+      "Improved accessibility: focus restoration on modal close, trapped tab cycling, full keyboard navigation",
+      "Architectural tradeoffs documented in the repo — no state library, no UI framework, by design"
     ],
-    note: "Frontend prototype with mocked data — not a production system.",
+    note: "Built as a frontend-focused prototype with mocked data to validate architecture and user workflows.",
     repo: "https://github.com/Regi25/praetor",
     demo: "https://praetor-tan.vercel.app"
   },
@@ -98,15 +95,15 @@ export const projects = [
     name: "Snaprime",
     tagline: "URL → ready-to-launch ad, in seconds",
     description:
-      "Paste a website URL, get a structured brand profile and 1–3 ready-to-edit Facebook/Instagram ads back. Full-stack, AI-integrated, and built to survive a 30-second serverless timeout.",
+      "Generate ready-to-edit social ads from any website using structured AI workflows. Full-stack, AI-integrated, built to survive a 30-second serverless timeout.",
     stack: ["TanStack Start", "PostgreSQL", "Drizzle ORM", "Groq (Llama 4 Scout)", "Cloudflare Pages"],
     highlights: [
       "Two-step server pipeline (extract+profile, then generate) to stay under Cloudflare's 30s function limit",
-      "AI output constrained by Zod schemas end-to-end — malformed model responses are rejected before they reach the database",
+      "Ensured AI responses were validated before persistence — output constrained by Zod schemas end-to-end",
       "Anti-hallucination guardrails: the model is only allowed to reference text actually scraped from the page",
       "Per-row edit and regenerate isolation — regenerating one ad can't touch its siblings"
     ],
-    note: "Solo build, including the extraction pipeline, AI schema design and Cloudflare deployment.",
+    note: "Designed and implemented the entire product — from AI pipeline and database schema to deployment.",
     repo: "https://github.com/Regi25/snaprime",
     demo: "https://snaprime.pages.dev"
   }
@@ -114,19 +111,19 @@ export const projects = [
 
 export const skills = [
   {
-    category: "Frontend",
+    category: "Core",
     items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "React Hook Form", "Zod"]
   },
   {
-    category: "Integration",
-    items: ["REST API", "RBAC", "Git"]
-  },
-  {
     category: "Backend & Data",
-    items: ["PostgreSQL", "Drizzle ORM", "TanStack Start"]
+    items: ["PostgreSQL", "Drizzle ORM", "TanStack Start", "REST API", "Server Functions"]
   },
   {
-    category: "AI",
-    items: ["LLM API integration (Groq)", "Structured output with Zod", "Prompt-constrained generation"]
+    category: "AI & Automation",
+    items: ["LLM API (Groq)", "Structured output with Zod", "Prompt-constrained generation"]
+  },
+  {
+    category: "Tools",
+    items: ["Git", "RBAC", "Figma", "Cloudflare Pages", "Vercel"]
   }
 ];
