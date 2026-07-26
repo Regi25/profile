@@ -5,7 +5,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://reginaiuldasheva.dev"),
+  metadataBase: new URL("https://profile-chi-one-31.vercel.app"),
   title: "Regina Iuldasheva — Frontend Developer",
   description:
     "Frontend Developer working in React, Next.js and TypeScript. Building full-stack and AI products end to end.",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Regina Iuldasheva — Frontend Developer",
     description:
       "Frontend Developer working in React, Next.js and TypeScript. Building full-stack and AI products end to end.",
-    url: "https://reginaiuldasheva.dev",
+    url: "https://profile-chi-one-31.vercel.app",
     siteName: "Regina Iuldasheva",
     type: "website"
   },
