@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { Moon, Sun } from "lucide-react";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
@@ -14,7 +14,8 @@ export function ThemeToggle() {
     return <div className="h-9 w-9" aria-hidden="true" />;
   }
 
-  const isDark = theme === "dark";
+  // resolvedTheme reflects the actual theme, including when it comes from the OS setting.
+  const isDark = resolvedTheme === "dark";
 
   return (
     <button

@@ -1,51 +1,83 @@
-"use client";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
+import { experience, previousCareer, type Highlight } from "@/lib/data";
 
-import { motion } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { experience } from "@/lib/data";
+function Bullet({ item }: { item: Highlight }) {
+  return (
+    <li className="relative pl-5 text-[15px] leading-relaxed text-ink-muted">
+      <span className="absolute left-0 top-[0.7em] h-1 w-2.5 rounded-full bg-accent/70" aria-hidden="true" />
+      {item.label && <span className="font-medium text-ink">{item.label}. </span>}
+      {item.text}
+    </li>
+  );
+}
 
 export function Experience() {
   return (
-    <section id="experience" className="border-t border-line bg-paper-dim/40">
-      <div className="mx-auto max-w-content px-6 py-24 md:py-28">
-        <SectionLabel index="02" name="experience" />
+    <section id="experience" className="border-t border-line py-16">
+      <Reveal>
+        <SectionHeading index="02" label="Experience" title="Production work and team projects." />
+      </Reveal>
 
-        <div className="space-y-0">
-          {experience.map((job, i) => (
-            <motion.div
-              key={job.id}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.06 }}
-              className="grid gap-3 border-b border-line py-8 first:pt-0 last:border-none md:grid-cols-[1fr_2.2fr] md:gap-10"
-            >
-              <div>
-                <p className="font-mono text-[13px] text-ink-muted">{job.period}</p>
-                <p className="mt-1 text-ink">{job.location}</p>
-              </div>
-              <div>
-                <h3 className="text-lg font-medium text-ink">
-                  {job.role} <span className="text-ink-muted">· {job.company}</span>
+      <div className="space-y-14">
+        {experience.map((job) => (
+          <Reveal key={job.id}>
+            <article>
+              <header className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+                <h3 className="text-xl font-medium text-ink">
+                  {job.role}
+                  <span className="text-ink-muted"> · {job.company}</span>
                 </h3>
-                {job.context && (
-                  <p className="mt-0.5 font-mono text-[13px] text-accent">{job.context}</p>
-                )}
-                <p className="mt-3 max-w-2xl leading-relaxed text-ink-muted">{job.summary}</p>
-                {job.highlights.length > 0 && (
-                  <ul className="mt-4 space-y-2">
-                    {job.highlights.map((h) => (
-                      <li key={h} className="flex gap-2.5 text-[15px] leading-relaxed text-ink-muted">
-                        <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <p className="shrink-0 font-mono text-[12.5px] text-ink-muted">{job.period}</p>
+              </header>
+              <p className="mt-1 text-sm text-ink-muted">{job.location}</p>
+              {job.summary && <p className="mt-4 leading-relaxed text-ink-muted">{job.summary}</p>}
+
+              <div className="mt-6 space-y-8">
+                {job.groups.map((group, gi) => (
+                  <div
+                    key={group.title || gi}
+                    className={group.title ? "rounded-xl border border-line bg-surface p-5 sm:p-6" : ""}
+                  >
+                    {group.title && (
+                      <div className="mb-4">
+                        <h4 className="font-serif text-[1.3rem] leading-snug text-ink">{group.title}</h4>
+                        {group.stack && (
+                          <p className="mt-1 font-mono text-[11.5px] leading-relaxed text-accent">{group.stack}</p>
+                        )}
+                      </div>
+                    )}
+                    <ul className="space-y-2.5">
+                      {group.items.map((item) => (
+                        <Bullet key={item.text.slice(0, 32)} item={item} />
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </article>
+          </Reveal>
+        ))}
+
+        <Reveal>
+          <div>
+            <h3 className="font-mono text-[12px] uppercase tracking-[0.16em] text-ink-muted">Before software</h3>
+            <div className="mt-5 divide-y divide-line border-y border-line">
+              {previousCareer.map((job) => (
+                <div key={job.role} className="grid gap-1 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+                  <p className="font-mono text-[12.5px] text-ink-muted">{job.period}</p>
+                  <div>
+                    <p className="font-medium text-ink">
+                      {job.role}
+                      <span className="font-normal text-ink-muted"> · {job.company}, {job.location}</span>
+                    </p>
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-ink-muted">{job.text}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

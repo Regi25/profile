@@ -2,26 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Warm paper + navy ink, echoing the PDF résumé. One accent, no gradients. */
 :root {
-  --paper: 252 252 253;
-  --paper-dim: 245 246 248;
-  --ink: 17 24 39;
-  --ink-muted: 107 114 128;
-  --line: 229 231 235;
-  --accent: 79 110 247;
-  --accent-soft: 237 241 255;
+  --paper: 250 249 246;
+  --paper-dim: 243 241 236;
   --surface: 255 255 255;
+  --ink: 27 34 48;
+  --ink-muted: 94 102 117;
+  --line: 226 223 216;
+  --accent: 46 84 170;
+  --accent-soft: 233 238 249;
 }
 
 .dark {
-  --paper: 11 11 13;
-  --paper-dim: 18 18 22;
-  --ink: 243 244 246;
-  --ink-muted: 161 161 170;
-  --line: 36 36 42;
-  --accent: 91 124 250;
-  --accent-soft: 21 27 58;
-  --surface: 18 18 22;
+  --paper: 14 17 23;
+  --paper-dim: 19 23 31;
+  --surface: 22 27 36;
+  --ink: 232 234 238;
+  --ink-muted: 152 160 174;
+  --line: 42 48 60;
+  --accent: 138 168 240;
+  --accent-soft: 28 36 56;
 }
 
 * {
@@ -35,11 +36,10 @@ html {
 body {
   background-color: rgb(var(--paper));
   color: rgb(var(--ink));
-  font-feature-settings: "ss01" 1, "cv01" 1;
 }
 
 ::selection {
-  background-color: rgb(var(--accent) / 0.18);
+  background-color: rgb(var(--accent) / 0.2);
   color: rgb(var(--ink));
 }
 
@@ -47,6 +47,10 @@ body {
   outline: 2px solid rgb(var(--accent));
   outline-offset: 3px;
   border-radius: 2px;
+}
+
+section[id] {
+  scroll-margin-top: 2rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -63,18 +67,46 @@ body {
   }
 }
 
-.section-label {
-  font-family: var(--font-geist-mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.02em;
-  color: rgb(var(--ink-muted));
+/* Entrance motion is pure CSS, so content stays visible even before (or without) JavaScript. */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.rise-late {
+  animation-delay: 0.12s;
+}
+
+/* Scroll reveal only where the browser supports scroll-driven animations; elsewhere it is simply visible. */
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: rise linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 30%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .reveal {
+    animation: none;
+  }
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-.grain {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events: none;
+.text-pretty {
+  text-wrap: pretty;
 }

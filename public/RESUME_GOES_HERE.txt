@@ -1,3 +1,0 @@
-Drop your real resume PDF here as: public/resume.pdf
-The Hero and Command Palette "Resume" buttons already link to /resume.pdf.
-Delete this file once the real resume is in place.

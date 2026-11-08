@@ -1,38 +1,63 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { skills } from "@/lib/data";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
+import { education, languages, skills } from "@/lib/data";
 
 export function Skills() {
   return (
-    <section id="skills" className="border-t border-line bg-paper-dim/40">
-      <div className="mx-auto max-w-content px-6 py-24 md:py-28">
-        <SectionLabel index="04" name="skills" />
+    <section id="skills" className="border-t border-line py-16">
+      <Reveal>
+        <SectionHeading index="04" label="Skills" title="Toolkit, education and languages." />
+      </Reveal>
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {skills.map((group, i) => (
-            <motion.div
-              key={group.category}
-              initial={{ opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: i * 0.06 }}
-              className="rounded-xl border border-line bg-surface p-5"
-            >
-              <p className="mb-4 font-mono text-[12px] uppercase tracking-wide text-accent">
+      <Reveal>
+        <dl className="divide-y divide-line border-y border-line">
+          {skills.map((group) => (
+            <div key={group.category} className="grid gap-3 py-5 sm:grid-cols-[10rem_1fr] sm:gap-6">
+              <dt className="pt-1 text-[13px] font-medium uppercase tracking-[0.12em] text-ink">
                 {group.category}
-              </p>
-              <ul className="space-y-2.5">
-                {group.items.map((item) => (
-                  <li key={item} className="text-[14.5px] text-ink-muted">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+              </dt>
+              <dd>
+                <ul className="flex flex-wrap gap-1.5">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="rounded-full border border-line bg-surface px-3 py-1 text-[13px] text-ink-muted"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
           ))}
-        </div>
+        </dl>
+      </Reveal>
+
+      <div className="mt-12 grid gap-10 sm:grid-cols-[1.6fr_1fr]">
+        <Reveal>
+          <h3 className="font-mono text-[12px] uppercase tracking-[0.16em] text-ink-muted">Education</h3>
+          <ul className="mt-4 space-y-4">
+            {education.map((e) => (
+              <li key={e.school}>
+                <p className="font-medium text-ink">{e.school}</p>
+                <p className="mt-0.5 text-[14px] leading-relaxed text-ink-muted">
+                  <span className="font-mono text-[12px]">{e.period}</span> · {e.text}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+        <Reveal>
+          <h3 className="font-mono text-[12px] uppercase tracking-[0.16em] text-ink-muted">Languages</h3>
+          <ul className="mt-4 space-y-3">
+            {languages.map((l) => (
+              <li key={l.name} className="flex items-baseline justify-between gap-4 border-b border-line pb-3">
+                <span className="font-medium text-ink">{l.name}</span>
+                <span className="text-right text-[13.5px] text-ink-muted">{l.level}</span>
+              </li>
+            ))}
+          </ul>
+        </Reveal>
       </div>
     </section>
   );

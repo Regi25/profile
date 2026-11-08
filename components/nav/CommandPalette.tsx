@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Github, Linkedin, Mail, Search, FileText } from "lucide-react";
-import { profile } from "@/lib/data";
+import { nav, profile } from "@/lib/data";
 
 type Command = {
   id: string;
@@ -21,41 +21,13 @@ export function CommandPalette() {
 
   const commands: Command[] = useMemo(
     () => [
-      {
-        id: "about",
-        label: "Go to About",
+      ...nav.map((item) => ({
+        id: item.id,
+        label: `Go to ${item.label}`,
         hint: "section",
         icon: <ArrowUpRight size={15} />,
-        action: () => scrollTo("about")
-      },
-      {
-        id: "experience",
-        label: "Go to Experience",
-        hint: "section",
-        icon: <ArrowUpRight size={15} />,
-        action: () => scrollTo("experience")
-      },
-      {
-        id: "projects",
-        label: "Go to Projects",
-        hint: "section",
-        icon: <ArrowUpRight size={15} />,
-        action: () => scrollTo("projects")
-      },
-      {
-        id: "skills",
-        label: "Go to Skills",
-        hint: "section",
-        icon: <ArrowUpRight size={15} />,
-        action: () => scrollTo("skills")
-      },
-      {
-        id: "contact",
-        label: "Go to Contact",
-        hint: "section",
-        icon: <ArrowUpRight size={15} />,
-        action: () => scrollTo("contact")
-      },
+        action: () => scrollTo(item.id)
+      })),
       {
         id: "github",
         label: "Open GitHub",
@@ -71,11 +43,18 @@ export function CommandPalette() {
         action: () => window.open(profile.linkedin, "_blank")
       },
       {
-        id: "resume",
-        label: "Open Resume",
+        id: "resume-en",
+        label: "Open CV (English)",
         hint: "pdf",
         icon: <FileText size={15} />,
-        action: () => window.open(profile.resumeHref, "_blank")
+        action: () => window.open(profile.resume.en, "_blank")
+      },
+      {
+        id: "resume-cz",
+        label: "Open CV (Czech)",
+        hint: "pdf",
+        icon: <FileText size={15} />,
+        action: () => window.open(profile.resume.cz, "_blank")
       },
       {
         id: "email",
@@ -143,13 +122,12 @@ export function CommandPalette() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="hidden items-center gap-2 rounded-full border border-line px-3.5 py-1.5 font-mono text-xs text-ink-muted transition-colors hover:border-accent hover:text-accent sm:flex"
+        aria-label="Open command palette (⌘K)"
+        title="Search · ⌘K"
+        className="flex h-9 items-center gap-1.5 rounded-full border border-line px-3 font-mono text-[11px] text-ink-muted transition-colors hover:border-accent hover:text-accent"
       >
-        <Search size={13} />
-        <span>Search</span>
-        <kbd className="ml-1 rounded border border-line bg-paper-dim px-1.5 py-0.5 text-[10px] leading-none">
-          ⌘K
-        </kbd>
+        <Search size={14} strokeWidth={1.75} />
+        <kbd className="font-mono">⌘K</kbd>
       </button>
 
       <AnimatePresence>
